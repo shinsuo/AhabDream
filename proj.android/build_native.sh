@@ -78,3 +78,5 @@ fi
 
 android update project -p . -t 1
 android update project -p ../../../cocos2dx/platform/android/java/ -t 1
+
+ant release
