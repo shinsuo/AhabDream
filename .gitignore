@@ -2,6 +2,6 @@ proj.android/assets
 proj.android/bin
 proj.android/gen
 proj.android/obj
-
+*.xcbkptlist
 *.a
 *.so
