@@ -14,6 +14,8 @@
 USING_NS_CC;
 
 class Actor;
+class Ship;
+class Whale;
 class StartLayer : public cocos2d::CCLayer
 {
 public:
@@ -31,8 +33,8 @@ public:
     
     
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
-//    virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
-//    virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
 //    virtual void ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent);
     
 public:
@@ -43,11 +45,14 @@ public:
     void freeActor();
     
 private:
+    
     bool m_bStart;
+    bool m_bRightMove;
+    
     CCMenu* m_pMenu;
     CCSprite* m_pLogo;
-    Actor* m_pShip;
-    Actor* m_pWhale;
+    Ship* m_pShip;
+    Whale* m_pWhale;
     
     CCSize m_winSize;
 };

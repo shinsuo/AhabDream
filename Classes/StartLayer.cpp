@@ -30,6 +30,7 @@ StartLayer::StartLayer():m_bStart(false)
 ,m_pLogo(0)
 ,m_pShip(0)
 ,m_pWhale(0)
+,m_bRightMove(false)
 {
 
 }
@@ -165,11 +166,11 @@ void StartLayer::loadWave()
 void StartLayer::loadActor()
 {
     std::vector<Actor*> v_Actor;
-    m_pShip = Actor::create("ship");
+    m_pShip = Ship::create("ship");
     addChild(m_pShip, kBattle);
     v_Actor.push_back(m_pShip);
    
-    m_pWhale = Actor::create("whale");
+    m_pWhale = Whale::create("whale");
     addChild(m_pWhale, kBattle);
     v_Actor.push_back(m_pWhale);
     
@@ -196,7 +197,7 @@ bool StartLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     if (m_bStart)
     {
-        CCPoint pt = pTouch->getLocationInView();
+        CCPoint pt = pTouch->getLocation();
 
         if (pt.x < m_winSize.width/2)
         {
@@ -207,9 +208,28 @@ bool StartLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
         {
             //right
             CCLog("right screen");
+            m_bRightMove = true;
         }
     }
     return  true;
+}
+
+void StartLayer::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+{
+    if (m_bRightMove)
+    {
+        CCPoint cur_pt = pTouch->getLocation();
+        CCPoint pre_pt = pTouch->getPreviousLocation();
+        
+        float y_dis = cur_pt.y - pre_pt.y;
+        m_pWhale->moveAimY(y_dis);
+        CCLog("%f,%f---%f,%f", pre_pt.x, pre_pt.y, cur_pt.x, cur_pt.y);
+    }
+}
+
+void StartLayer::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+{
+    m_bRightMove = false;
 }
 
 

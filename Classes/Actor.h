@@ -34,4 +34,34 @@ private:
     cocos2d::CCSprite* m_pSp;
 };
 
+//----------------------------------------------------------------
+
+class Ship : public Actor
+{
+public:
+    Ship();
+    ~Ship();
+    
+    static Ship* create(const char* png);
+    virtual bool init();
+};
+
+//----------------------------------------------------------------
+
+class Whale : public Actor
+{
+public:
+    Whale();
+    ~Whale();
+    
+    static Whale* create(const char* png);
+    virtual bool init();
+    
+    void moveAimY(float y);
+    
+    CC_SYNTHESIZE(cocos2d::CCSprite*, m_pAim1, Aim1);
+    CC_SYNTHESIZE(cocos2d::CCSprite*, m_pAim2, Aim2);
+    
+    virtual void update(float dt);
+};
 #endif /* defined(__AhabDream__Actor__) */
