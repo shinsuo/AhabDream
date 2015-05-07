@@ -230,21 +230,14 @@
 		379BB9D217F03F3700829B88 /* sconscript in Resources */ = {isa = PBXBuildFile; fileRef = 379BB98D17F03F3700829B88 /* sconscript */; };
 		379BB9D317F03F3700829B88 /* CCSGUIReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB99117F03F3700829B88 /* CCSGUIReader.cpp */; };
 		379BB9D417F03F3700829B88 /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB99317F03F3700829B88 /* CCSSceneReader.cpp */; };
-		54723B971AFA51F200F49C7C /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 54723B961AFA51F200F49C7C /* config.json */; };
-		54723BA21AFA5F9B00F49C7C /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 54723B9B1AFA5F9B00F49C7C /* 1.png */; };
-		54723BA31AFA5F9B00F49C7C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54723B9C1AFA5F9B00F49C7C /* 2.png */; };
-		54723BA41AFA5F9B00F49C7C /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 54723B9D1AFA5F9B00F49C7C /* 3.png */; };
-		54723BA51AFA5F9B00F49C7C /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 54723B9E1AFA5F9B00F49C7C /* 4.png */; };
-		54723BA61AFA5F9B00F49C7C /* ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 54723B9F1AFA5F9B00F49C7C /* ship.png */; };
-		54723BA71AFA5F9B00F49C7C /* weapon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 54723BA01AFA5F9B00F49C7C /* weapon1.png */; };
-		54723BA81AFA5F9B00F49C7C /* whale.png in Resources */ = {isa = PBXBuildFile; fileRef = 54723BA11AFA5F9B00F49C7C /* whale.png */; };
+		5408A1A41AFB3FAA00B2EDFC /* res in Resources */ = {isa = PBXBuildFile; fileRef = 5408A1A31AFB3FAA00B2EDFC /* res */; };
+		5408A1A71AFB42B100B2EDFC /* CompassLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5408A1A51AFB42B100B2EDFC /* CompassLayer.cpp */; };
+		5408A1AA1AFB49D400B2EDFC /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5408A1A81AFB49D400B2EDFC /* Actor.cpp */; };
 		54723BAB1AFA618200F49C7C /* WaveNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54723BA91AFA618200F49C7C /* WaveNode.cpp */; };
 		54A275041AF8A7E600725C5F /* StartLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54A275021AF8A7E600725C5F /* StartLayer.cpp */; };
 		54F093A61AF9FE2600A2F5C8 /* CCEaseCustom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54F093A01AF9FE2600A2F5C8 /* CCEaseCustom.cpp */; };
 		54F093A71AF9FE2600A2F5C8 /* CCTweenFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54F093A21AF9FE2600A2F5C8 /* CCTweenFunction.cpp */; };
 		54F093A81AF9FE2600A2F5C8 /* GameUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54F093A41AF9FE2600A2F5C8 /* GameUtil.cpp */; };
-		54F093AB1AFA077F00A2F5C8 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 54F093A91AFA077F00A2F5C8 /* start.png */; };
-		54F093AC1AFA077F00A2F5C8 /* start2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54F093AA1AFA077F00A2F5C8 /* start2.png */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
@@ -737,6 +730,11 @@
 		379BB99217F03F3700829B88 /* CCSGUIReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSGUIReader.h; sourceTree = "<group>"; };
 		379BB99317F03F3700829B88 /* CCSSceneReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSSceneReader.cpp; sourceTree = "<group>"; };
 		379BB99417F03F3700829B88 /* CCSSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSSceneReader.h; sourceTree = "<group>"; };
+		5408A1A31AFB3FAA00B2EDFC /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
+		5408A1A51AFB42B100B2EDFC /* CompassLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CompassLayer.cpp; path = ../Classes/CompassLayer.cpp; sourceTree = "<group>"; };
+		5408A1A61AFB42B100B2EDFC /* CompassLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompassLayer.h; path = ../Classes/CompassLayer.h; sourceTree = "<group>"; };
+		5408A1A81AFB49D400B2EDFC /* Actor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Actor.cpp; path = ../Classes/Actor.cpp; sourceTree = "<group>"; };
+		5408A1A91AFB49D400B2EDFC /* Actor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Actor.h; path = ../Classes/Actor.h; sourceTree = "<group>"; };
 		54723B861AFA4C3A00F49C7C /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = ../Classes/AppMacros.h; sourceTree = "<group>"; };
 		54723B8B1AFA513C00F49C7C /* document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = document.h; sourceTree = "<group>"; };
 		54723B8C1AFA513C00F49C7C /* filestream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filestream.h; sourceTree = "<group>"; };
@@ -748,14 +746,6 @@
 		54723B931AFA513C00F49C7C /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
 		54723B941AFA513C00F49C7C /* stringbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringbuffer.h; sourceTree = "<group>"; };
 		54723B951AFA513C00F49C7C /* writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
-		54723B961AFA51F200F49C7C /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
-		54723B9B1AFA5F9B00F49C7C /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		54723B9C1AFA5F9B00F49C7C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		54723B9D1AFA5F9B00F49C7C /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
-		54723B9E1AFA5F9B00F49C7C /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
-		54723B9F1AFA5F9B00F49C7C /* ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship.png; sourceTree = "<group>"; };
-		54723BA01AFA5F9B00F49C7C /* weapon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weapon1.png; sourceTree = "<group>"; };
-		54723BA11AFA5F9B00F49C7C /* whale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whale.png; sourceTree = "<group>"; };
 		54723BA91AFA618200F49C7C /* WaveNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WaveNode.cpp; path = ../Classes/WaveNode.cpp; sourceTree = "<group>"; };
 		54723BAA1AFA618200F49C7C /* WaveNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaveNode.h; path = ../Classes/WaveNode.h; sourceTree = "<group>"; };
 		54A275021AF8A7E600725C5F /* StartLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StartLayer.cpp; path = ../Classes/StartLayer.cpp; sourceTree = "<group>"; };
@@ -766,8 +756,6 @@
 		54F093A31AF9FE2600A2F5C8 /* CCTweenFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTweenFunction.h; sourceTree = "<group>"; };
 		54F093A41AF9FE2600A2F5C8 /* GameUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameUtil.cpp; sourceTree = "<group>"; };
 		54F093A51AF9FE2600A2F5C8 /* GameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameUtil.h; sourceTree = "<group>"; };
-		54F093A91AFA077F00A2F5C8 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
-		54F093AA1AFA077F00A2F5C8 /* start2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start2.png; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -1310,6 +1298,10 @@
 				54A275031AF8A7E600725C5F /* StartLayer.h */,
 				54723BA91AFA618200F49C7C /* WaveNode.cpp */,
 				54723BAA1AFA618200F49C7C /* WaveNode.h */,
+				5408A1A81AFB49D400B2EDFC /* Actor.cpp */,
+				5408A1A91AFB49D400B2EDFC /* Actor.h */,
+				5408A1A51AFB42B100B2EDFC /* CompassLayer.cpp */,
+				5408A1A61AFB42B100B2EDFC /* CompassLayer.h */,
 				54723B861AFA4C3A00F49C7C /* AppMacros.h */,
 			);
 			name = Classes;
@@ -1795,16 +1787,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				54723B9B1AFA5F9B00F49C7C /* 1.png */,
-				54723B9C1AFA5F9B00F49C7C /* 2.png */,
-				54723B9D1AFA5F9B00F49C7C /* 3.png */,
-				54723B9E1AFA5F9B00F49C7C /* 4.png */,
-				54723B9F1AFA5F9B00F49C7C /* ship.png */,
-				54723BA01AFA5F9B00F49C7C /* weapon1.png */,
-				54723BA11AFA5F9B00F49C7C /* whale.png */,
-				54723B961AFA51F200F49C7C /* config.json */,
-				54F093A91AFA077F00A2F5C8 /* start.png */,
-				54F093AA1AFA077F00A2F5C8 /* start2.png */,
+				5408A1A31AFB3FAA00B2EDFC /* res */,
 				D41A0AD0160F154A004552AE /* Default-568h@2x.png */,
 				7855E0DF153FEF240059DD9A /* Default.png */,
 				D446FD6D16102124000ADA7B /* Default@2x.png */,
@@ -1824,6 +1807,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "AhabDream" */;
 			buildPhases = (
+				5408A1A11AFB3E0E00B2EDFC /* ShellScript */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
@@ -1887,31 +1871,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
+				5408A1A41AFB3FAA00B2EDFC /* res in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
-				54723BA31AFA5F9B00F49C7C /* 2.png in Resources */,
-				54723BA41AFA5F9B00F49C7C /* 3.png in Resources */,
-				54723B971AFA51F200F49C7C /* config.json in Resources */,
-				54723BA81AFA5F9B00F49C7C /* whale.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
-				54F093AC1AFA077F00A2F5C8 /* start2.png in Resources */,
-				54723BA71AFA5F9B00F49C7C /* weapon1.png in Resources */,
-				54723BA61AFA5F9B00F49C7C /* ship.png in Resources */,
-				54723BA21AFA5F9B00F49C7C /* 1.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
-				54723BA51AFA5F9B00F49C7C /* 4.png in Resources */,
 				379BB9CC17F03F3700829B88 /* json_internalarray.inl in Resources */,
 				379BB9CD17F03F3700829B88 /* json_internalmap.inl in Resources */,
 				379BB9D017F03F3700829B88 /* json_valueiterator.inl in Resources */,
 				379BB9D217F03F3700829B88 /* sconscript in Resources */,
-				54F093AB1AFA077F00A2F5C8 /* start.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5408A1A11AFB3E0E00B2EDFC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "_TARGET_BUILD_CONTENTS_PATH=$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH\necho _TARGET_BUILD_CONTENTS_PATH: $_TARGET_BUILD_CONTENTS_PATH\necho PWD: $PWD\n\necho Cleaning $_TARGET_BUILD_CONTENTS_PATH\n\nrm -rf $_TARGET_BUILD_CONTENTS_PATH/res\n\n#mkdir -p $_TARGET_BUILD_CONTENTS_PATH/config\n#mkdir -p $_TARGET_BUILD_CONTENTS_PATH/js\n\ncp -RLp $PWD/../Resources/res $_TARGET_BUILD_CONTENTS_PATH";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -1944,6 +1935,7 @@
 				15A3D9161682F7D5002FB0C5 /* b2WorldCallbacks.cpp in Sources */,
 				15A3D9171682F7D5002FB0C5 /* b2ChainAndCircleContact.cpp in Sources */,
 				15A3D9181682F7D5002FB0C5 /* b2ChainAndPolygonContact.cpp in Sources */,
+				5408A1A71AFB42B100B2EDFC /* CompassLayer.cpp in Sources */,
 				15A3D9191682F7D5002FB0C5 /* b2CircleContact.cpp in Sources */,
 				15A3D91A1682F7D5002FB0C5 /* b2Contact.cpp in Sources */,
 				15A3D91B1682F7D5002FB0C5 /* b2ContactSolver.cpp in Sources */,
@@ -2040,6 +2032,7 @@
 				15A3DA5E1682F826002FB0C5 /* CCPhysicsDebugNode.cpp in Sources */,
 				15A3DA5F1682F826002FB0C5 /* CCPhysicsSprite.cpp in Sources */,
 				15A3DAEB1682F8A6002FB0C5 /* CDAudioManager.m in Sources */,
+				5408A1AA1AFB49D400B2EDFC /* Actor.cpp in Sources */,
 				15A3DAEC1682F8A6002FB0C5 /* CDOpenALSupport.m in Sources */,
 				15A3DAED1682F8A6002FB0C5 /* CocosDenshion.m in Sources */,
 				15A3DAEE1682F8A6002FB0C5 /* SimpleAudioEngine.mm in Sources */,

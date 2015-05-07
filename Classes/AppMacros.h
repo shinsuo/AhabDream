@@ -17,17 +17,22 @@ extern std::string config_keys[];
 
 
 enum{
-    kWave1,
-    kWave2,
     
-    kShip,
-    kWhale,
-    
-    kWave3,
+    kWave5,
     kWave4,
+    kWave3,
+    
+    kWhale,
+    kShip,
+    kBattle,
+    
+    kWave2,
+    kWave1,
     
     kUI,
     kMenu,
+    
+    kDebug,
 };
 
 #endif /* defined(__AhabDream__AppConfig__) */

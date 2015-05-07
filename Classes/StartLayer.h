@@ -13,6 +13,7 @@
 
 USING_NS_CC;
 
+class Actor;
 class StartLayer : public cocos2d::CCLayer
 {
 public:
@@ -38,8 +39,17 @@ public:
     void readConfig();
     void loadWave();
     
+    void loadActor();
+    void freeActor();
+    
 private:
     bool m_bStart;
+    CCMenu* m_pMenu;
+    CCSprite* m_pLogo;
+    Actor* m_pShip;
+    Actor* m_pWhale;
+    
+    CCSize m_winSize;
 };
 
 #endif /* defined(__AhabDream__StartLayer__) */

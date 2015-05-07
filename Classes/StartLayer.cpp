@@ -8,6 +8,8 @@
 
 #include "StartLayer.h"
 #include "WaveNode.h"
+#include "CompassLayer.h"
+#include "Actor.h"
 
 #include "GameUtil.h"
 #include "document.h"
@@ -24,6 +26,10 @@ std::string config_keys[] = {
 #define CONFIG_COUNT 2
 
 StartLayer::StartLayer():m_bStart(false)
+,m_pMenu(0)
+,m_pLogo(0)
+,m_pShip(0)
+,m_pWhale(0)
 {
 
 }
@@ -40,45 +46,61 @@ bool StartLayer::init()
         return false;
     }
     
-    readConfig();
-    loadWave();
-    
-    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-    CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+    m_winSize = CCDirector::sharedDirector()->getVisibleSize();
     
     CCArray* arr = CCArray::create();
     
-    CCLabelTTF* title_label = CCLabelTTF::create("Ahab's Dream", "", 48);
-    CCMenuItemLabel* title = CCMenuItemLabel::create(title_label);//, this, menu_selector(StartLayer::menuCloseCallback));
-    arr->addObject(title);
-    title->setPosition(ccp(visibleSize.width/2,visibleSize.height/2+100));
+//    CCLabelTTF* title_label = CCLabelTTF::create("Ahab's Dream", "", 48);
+    m_pLogo = GameUtil::createSprite("logo");
+    m_pLogo->setPosition(ccp(m_winSize.width/2,m_winSize.height/2+100));
+    addChild(m_pLogo, kUI);
     
     
     CCLabelTTF* start_label = CCLabelTTF::create("Start", "", 48);
     CCMenuItemLabel* start = CCMenuItemLabel::create(start_label, this, menu_selector(StartLayer::menuCloseCallback));
 //    arr->addObject(start);
-    start->setPosition(ccp(visibleSize.width/2,visibleSize.height/2-100));
+    start->setPosition(ccp(m_winSize.width/2,m_winSize.height/2-100));
     
     
     CCMenuItemImage* start1 = GameUtil::createMenuImage("start", "start2");
     start1->setTarget(this, menu_selector(StartLayer::menuCloseCallback));
     arr->addObject(start1);
-    start1->setPosition(ccp(visibleSize.width/2,visibleSize.height/2-100));
+    start1->setPosition(ccp(m_winSize.width/2,m_winSize.height/2-100));
     start1->setAnchorPoint(ccp(0.5,0.5));
     
-    CCMenu* pMenu = CCMenu::createWithArray(arr);
-    pMenu->setPosition(CCPointZero);
-    this->addChild(pMenu, kMenu);
+    m_pMenu = CCMenu::createWithArray(arr);
+    m_pMenu->setPosition(CCPointZero);
+    this->addChild(m_pMenu, kMenu);
 
     
     setTouchEnabled(true);
     setTouchMode(kCCTouchesOneByOne);
+
+    
+    readConfig();
+    loadWave();
+
+    
     return true;
 }
 
 void StartLayer::menuCloseCallback(CCObject* pSender)
 {
-
+    if (!m_bStart)
+    {
+        CCPoint pt = ccp(m_pLogo->getPositionX(), m_winSize.height+m_pLogo->getContentSize().width/2);
+        CCMoveTo* mt = CCMoveTo::create(0.6, pt);
+//        CCEaseBounceOut* peeo = CCEaseBounceOut::create(mt);
+        m_pLogo->runAction(mt);
+        
+        
+        m_pMenu->setVisible(false);
+        
+        m_bStart = true;
+        
+        
+        loadActor();
+    }
 }
 
 void StartLayer::readConfig()
@@ -124,7 +146,10 @@ void StartLayer::loadWave()
  
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     
-    for (int i = 0; i < 4; i++)
+    int zorders[] = {kWave1, kWave2, kWave3, kWave4, kWave5};
+    float pos_ys[] = {0.1,0.25,0.5,0.7, 0.9};
+    
+    for (int i = 0; i < sizeof(zorders)/sizeof(int); i++)
     {
 //        std::string wave_name = GameUtil::getStrByInt(i+1);
 //        CCSprite* wave_sp = GameUtil::createSprite(wave_name.c_str());
@@ -132,9 +157,39 @@ void StartLayer::loadWave()
 //        addChild(wave_sp, i);
         
         WaveNode* wave = WaveNode::create(i+1);
-        addChild(wave, 4-i);
-        wave->setPosition(ccp(0, i*100));
+        addChild(wave, zorders[i]);
+        wave->setPosition(ccp(0, m_winSize.height*pos_ys[i]));
     }
+}
+
+void StartLayer::loadActor()
+{
+    std::vector<Actor*> v_Actor;
+    m_pShip = Actor::create("ship");
+    addChild(m_pShip, kBattle);
+    v_Actor.push_back(m_pShip);
+   
+    m_pWhale = Actor::create("whale");
+    addChild(m_pWhale, kBattle);
+    v_Actor.push_back(m_pWhale);
+    
+    
+    int directions[] = {-1, 1};
+    float y = m_winSize.height/2;
+    for (int i = 0; i < v_Actor.size(); i++)
+    {
+        float width = v_Actor[i]->getContentSize().width/2;
+        CCPoint pt = ccp((m_winSize.width/2+width)*directions[i]
+                         +m_winSize.width/2,y);
+        v_Actor[i]->setPosition(pt);
+        
+        float target_x = m_winSize.width/2+directions[i]*m_winSize.width/4;
+
+        CCMoveTo* mt = CCMoveTo::create(0.6, ccp(target_x, y));
+        v_Actor[i]->runAction(mt);
+        
+    }
+    
 }
 
 bool StartLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
@@ -142,8 +197,8 @@ bool StartLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
     if (m_bStart)
     {
         CCPoint pt = pTouch->getLocationInView();
-        CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-        if (pt.x < visibleSize.width/2)
+
+        if (pt.x < m_winSize.width/2)
         {
             //left
             CCLog("left screen");
