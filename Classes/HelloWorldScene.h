@@ -12,11 +12,17 @@ public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::CCScene* scene();
     
+    static cocos2d::CCScene* getInstance();
+    
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
     
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
+    
+
+private:
+    cocos2d::CCSize m_winSize;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

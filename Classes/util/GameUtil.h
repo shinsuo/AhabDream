@@ -35,6 +35,9 @@ public:
 
     static float getRandom();
 
+    static CCScene* getMainScene();
+    static float getWinWidth();
+    static float getWinHeight();
 
 	inline static const char* trim(std::string& text)  
 	{  

@@ -2,10 +2,14 @@
 #include "StartLayer.h"
 USING_NS_CC;
 
+static CCScene* g_scene = 0;
+
 CCScene* HelloWorld::scene()
 {
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
+    
+    g_scene = scene;
     
     // 'layer' is an autorelease object
     HelloWorld *layer = HelloWorld::create();
@@ -15,6 +19,11 @@ CCScene* HelloWorld::scene()
 
     // return the scene
     return scene;
+}
+
+CCScene* HelloWorld::getInstance()
+{
+    return g_scene;
 }
 
 // on "init" you need to initialize your instance
@@ -27,8 +36,7 @@ bool HelloWorld::init()
         return false;
     }
     
-    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-    CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+    m_winSize = CCDirector::sharedDirector()->getVisibleSize();
 
 //    /////////////////////////////
 //    // 2. add a menu item with "X" image, which is clicked to quit the program

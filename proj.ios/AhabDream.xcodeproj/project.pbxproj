@@ -233,6 +233,7 @@
 		5408A1A41AFB3FAA00B2EDFC /* res in Resources */ = {isa = PBXBuildFile; fileRef = 5408A1A31AFB3FAA00B2EDFC /* res */; };
 		5408A1A71AFB42B100B2EDFC /* CompassLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5408A1A51AFB42B100B2EDFC /* CompassLayer.cpp */; };
 		5408A1AA1AFB49D400B2EDFC /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5408A1A81AFB49D400B2EDFC /* Actor.cpp */; };
+		5429D2FC1AFBA19B00D7EED1 /* BloodGroove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5429D2FA1AFBA19B00D7EED1 /* BloodGroove.cpp */; };
 		54723BAB1AFA618200F49C7C /* WaveNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54723BA91AFA618200F49C7C /* WaveNode.cpp */; };
 		54A275041AF8A7E600725C5F /* StartLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54A275021AF8A7E600725C5F /* StartLayer.cpp */; };
 		54F093A61AF9FE2600A2F5C8 /* CCEaseCustom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54F093A01AF9FE2600A2F5C8 /* CCEaseCustom.cpp */; };
@@ -735,6 +736,8 @@
 		5408A1A61AFB42B100B2EDFC /* CompassLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompassLayer.h; path = ../Classes/CompassLayer.h; sourceTree = "<group>"; };
 		5408A1A81AFB49D400B2EDFC /* Actor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Actor.cpp; path = ../Classes/Actor.cpp; sourceTree = "<group>"; };
 		5408A1A91AFB49D400B2EDFC /* Actor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Actor.h; path = ../Classes/Actor.h; sourceTree = "<group>"; };
+		5429D2FA1AFBA19B00D7EED1 /* BloodGroove.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BloodGroove.cpp; path = ../Classes/BloodGroove.cpp; sourceTree = "<group>"; };
+		5429D2FB1AFBA19B00D7EED1 /* BloodGroove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BloodGroove.h; path = ../Classes/BloodGroove.h; sourceTree = "<group>"; };
 		54723B861AFA4C3A00F49C7C /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = ../Classes/AppMacros.h; sourceTree = "<group>"; };
 		54723B8B1AFA513C00F49C7C /* document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = document.h; sourceTree = "<group>"; };
 		54723B8C1AFA513C00F49C7C /* filestream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filestream.h; sourceTree = "<group>"; };
@@ -1298,6 +1301,8 @@
 				54A275031AF8A7E600725C5F /* StartLayer.h */,
 				54723BA91AFA618200F49C7C /* WaveNode.cpp */,
 				54723BAA1AFA618200F49C7C /* WaveNode.h */,
+				5429D2FA1AFBA19B00D7EED1 /* BloodGroove.cpp */,
+				5429D2FB1AFBA19B00D7EED1 /* BloodGroove.h */,
 				5408A1A81AFB49D400B2EDFC /* Actor.cpp */,
 				5408A1A91AFB49D400B2EDFC /* Actor.h */,
 				5408A1A51AFB42B100B2EDFC /* CompassLayer.cpp */,
@@ -1911,6 +1916,7 @@
 			files = (
 				15A3D8FF1682F7D5002FB0C5 /* b2BroadPhase.cpp in Sources */,
 				15A3D9001682F7D5002FB0C5 /* b2CollideCircle.cpp in Sources */,
+				5429D2FC1AFBA19B00D7EED1 /* BloodGroove.cpp in Sources */,
 				15A3D9011682F7D5002FB0C5 /* b2CollideEdge.cpp in Sources */,
 				15A3D9021682F7D5002FB0C5 /* b2CollidePolygon.cpp in Sources */,
 				15A3D9031682F7D5002FB0C5 /* b2Collision.cpp in Sources */,

@@ -20,10 +20,39 @@
 std::map<std::string, double> config_map;
 std::string config_keys[] = {
     "Gaptime",
-    "Speed"
+    "Speed",
+    "Guntime",
+    "Distance",
+    "Blinktime",
+    "Lighttime",
+    "Delaytime",
+    "ShipHP",
+    "BeastHP",
+    "BeastATK",
+    "BeastATKF",
+    "ShipATKa",
+    "ShipATKb",
+    "ShipATKS",
+    "ShipMP",
+    "ShipMPATK",
+    "ShipMPATKfail",
+    "ShipMPATKS",
+    "ShipMPATKSfail",
+    "ShipMPBeastATK",
+    "ShipMPBeastATKF",
+    "BeastMP",
+    "BeastMPATK",
+    "BeastMPATKfail",
+    "BeastMPATKS",
+    "BeastMPATKSfail",
+    "BeastMPBeastATK",
+    "BeastMPBeastATKF",
+    "ATKcoin",
+    "ATKScoin",
+    "Lvup"
 };
 
-#define CONFIG_COUNT 2
+#define CONFIG_COUNT 31
 
 StartLayer::StartLayer():m_bStart(false)
 ,m_pMenu(0)
@@ -57,17 +86,12 @@ bool StartLayer::init()
     addChild(m_pLogo, kUI);
     
     
-    CCLabelTTF* start_label = CCLabelTTF::create("Start", "", 48);
-    CCMenuItemLabel* start = CCMenuItemLabel::create(start_label, this, menu_selector(StartLayer::menuCloseCallback));
-//    arr->addObject(start);
-    start->setPosition(ccp(m_winSize.width/2,m_winSize.height/2-100));
-    
-    
     CCMenuItemImage* start1 = GameUtil::createMenuImage("start", "start2");
     start1->setTarget(this, menu_selector(StartLayer::menuCloseCallback));
     arr->addObject(start1);
     start1->setPosition(ccp(m_winSize.width/2,m_winSize.height/2-100));
     start1->setAnchorPoint(ccp(0.5,0.5));
+    start1->setTag(kTag_Start);
     
     m_pMenu = CCMenu::createWithArray(arr);
     m_pMenu->setPosition(CCPointZero);
@@ -87,21 +111,31 @@ bool StartLayer::init()
 
 void StartLayer::menuCloseCallback(CCObject* pSender)
 {
-    if (!m_bStart)
+    CCNode* node = (CCNode*)pSender;
+    int tag = node->getTag();
+    if (tag == kTag_Start)
     {
-        CCPoint pt = ccp(m_pLogo->getPositionX(), m_winSize.height+m_pLogo->getContentSize().width/2);
-        CCMoveTo* mt = CCMoveTo::create(0.6, pt);
-//        CCEaseBounceOut* peeo = CCEaseBounceOut::create(mt);
-        m_pLogo->runAction(mt);
-        
-        
-        m_pMenu->setVisible(false);
-        
-        m_bStart = true;
-        
-        
-        loadActor();
+        if (!m_bStart)
+        {
+            CCPoint pt = ccp(m_pLogo->getPositionX(), m_winSize.height+m_pLogo->getContentSize().width/2);
+            CCMoveTo* mt = CCMoveTo::create(0.6, pt);
+            //        CCEaseBounceOut* peeo = CCEaseBounceOut::create(mt);
+            m_pLogo->runAction(mt);
+            
+            
+            m_pMenu->setVisible(false);
+            
+            //        m_bStart = true;
+            
+            
+            loadActor();
+        }
     }
+    else if (tag == kTag_Fire)
+    {
+        m_pShip->fire();
+    }
+    
 }
 
 void StartLayer::readConfig()
@@ -187,10 +221,45 @@ void StartLayer::loadActor()
         float target_x = m_winSize.width/2+directions[i]*m_winSize.width/4;
 
         CCMoveTo* mt = CCMoveTo::create(0.6, ccp(target_x, y));
-        v_Actor[i]->runAction(mt);
-        
+        CCSequence* seq = CCSequence::create(mt,
+                                             CCCallFunc::create(this, callfunc_selector(StartLayer::delayStart)),
+                                             0);
+        v_Actor[i]->runAction(seq);
     }
     
+    
+    CCArray* arr = CCArray::create();
+    CCMenuItemImage* fire = GameUtil::createMenuImage("fire", "fire2");
+    fire->setTarget(this, menu_selector(StartLayer::menuCloseCallback));
+    fire->setPosition(ccp(fire->getContentSize().width/2+60,m_winSize.height*0.15));
+//    fire->setAnchorPoint(ccp(0.5,0.5));
+    fire->setTag(kTag_Fire);
+    arr->addObject(fire);
+    
+    m_pFire = CCMenu::createWithArray(arr);
+    addChild(m_pFire, kMenu);
+    m_pFire->setPosition(CCPointZero);
+    
+    
+    m_pSlider = GameUtil::createSprite("slider");
+    m_pSlider->setPosition(ccp(GameUtil::getWinWidth()*0.9, GameUtil::getWinHeight()/2));
+    addChild(m_pSlider, kUI);
+    
+    m_pCursor = GameUtil::createSprite("cursor");
+    m_pSlider->addChild(m_pCursor);
+    m_pCursor->setPositionX(m_pSlider->getContentSize().width/2);
+    m_pCursor->setPositionY(m_pSlider->getContentSize().height*0.1);
+}
+
+void StartLayer::delayStart()
+{
+    if (!m_bStart)
+    {
+        m_pShip->showUI();
+        m_pWhale->showUI();
+        
+        m_bStart = true;
+    }
 }
 
 bool StartLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
@@ -211,6 +280,7 @@ bool StartLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
             m_bRightMove = true;
         }
     }
+    
     return  true;
 }
 
@@ -222,8 +292,16 @@ void StartLayer::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent
         CCPoint pre_pt = pTouch->getPreviousLocation();
         
         float y_dis = cur_pt.y - pre_pt.y;
-        m_pWhale->moveAimY(y_dis);
-        CCLog("%f,%f---%f,%f", pre_pt.x, pre_pt.y, cur_pt.x, cur_pt.y);
+        float new_cursor_y = m_pCursor->getPositionY()+y_dis;
+        
+        CCLog("new_cursor_y,%f", new_cursor_y);
+        
+        if (new_cursor_y >= m_pSlider->getContentSize().height*0.1 && new_cursor_y <= m_pSlider->getContentSize().height*0.9)
+        {
+            m_pWhale->moveAimY(y_dis);
+            
+            m_pCursor->setPositionY(new_cursor_y);
+        }
     }
 }
 

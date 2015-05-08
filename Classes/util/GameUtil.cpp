@@ -7,14 +7,29 @@
 //
 
 #include "GameUtil.h"
-
+#include "HelloWorldScene.h"
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 
 float GameUtil::getRandom()
 {
 	return CCRANDOM_0_1();
 }
 
+CCScene* GameUtil::getMainScene()
+{
+    return HelloWorld::getInstance();
+}
+
+float GameUtil::getWinHeight()
+{
+    return CCDirector::sharedDirector()->getVisibleSize().height;
+}
+
+float GameUtil::getWinWidth()
+{
+    return CCDirector::sharedDirector()->getVisibleSize().width;
+}
 
 CCSprite* GameUtil::createSprite(const char* png)
 {

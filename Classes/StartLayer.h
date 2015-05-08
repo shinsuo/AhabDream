@@ -37,6 +37,8 @@ public:
     virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
 //    virtual void ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent);
     
+    void delayStart();
+    
 public:
     void readConfig();
     void loadWave();
@@ -50,11 +52,17 @@ private:
     bool m_bRightMove;
     
     CCMenu* m_pMenu;
+    
+    CCMenu* m_pFire;
+    
     CCSprite* m_pLogo;
     Ship* m_pShip;
     Whale* m_pWhale;
     
     CCSize m_winSize;
+    
+    CCSprite* m_pSlider;
+    CCSprite* m_pCursor;
 };
 
 #endif /* defined(__AhabDream__StartLayer__) */
