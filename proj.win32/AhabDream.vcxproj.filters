@@ -7,6 +7,15 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Util">
+      <UniqueIdentifier>{6c309556-b0c1-45ec-b04a-7ea7ca69f4f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Util\rapidjson">
+      <UniqueIdentifier>{7d831899-a47d-4db8-b519-aff2ba2a9963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Util\rapidjson\internal">
+      <UniqueIdentifier>{c902fcb3-a1fd-4869-b7fa-d8b4de816eca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -18,6 +27,27 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\StartLayer.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WaveNode.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\util\CCEaseCustom.cpp">
+      <Filter>Classes\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\util\CCTweenFunction.cpp">
+      <Filter>Classes\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\util\GameUtil.cpp">
+      <Filter>Classes\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Actor.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CompassLayer.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -27,6 +57,60 @@
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppMacros.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartLayer.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WaveNode.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\CCEaseCustom.h">
+      <Filter>Classes\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\CCTweenFunction.h">
+      <Filter>Classes\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\GameUtil.h">
+      <Filter>Classes\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\rapidjson\document.h">
+      <Filter>Classes\Util\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\rapidjson\filestream.h">
+      <Filter>Classes\Util\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\rapidjson\prettywriter.h">
+      <Filter>Classes\Util\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\rapidjson\rapidjson.h">
+      <Filter>Classes\Util\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\rapidjson\reader.h">
+      <Filter>Classes\Util\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\rapidjson\stringbuffer.h">
+      <Filter>Classes\Util\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\rapidjson\writer.h">
+      <Filter>Classes\Util\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\rapidjson\internal\pow10.h">
+      <Filter>Classes\Util\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\rapidjson\internal\stack.h">
+      <Filter>Classes\Util\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util\rapidjson\internal\strfunc.h">
+      <Filter>Classes\Util\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Actor.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CompassLayer.h">
       <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>

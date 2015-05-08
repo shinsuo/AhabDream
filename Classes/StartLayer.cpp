@@ -138,7 +138,9 @@ void StartLayer::readConfig()
             
         }
         
-        delete[] bytes;
+#if CC_PLATFORM_WIN32 != CC_TARGET_PLATFORM
+		delete[] bytes;
+#endif
     }
 }
 

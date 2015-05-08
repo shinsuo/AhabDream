@@ -16,6 +16,6 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     AppDelegate app;
     CCEGLView* eglView = CCEGLView::sharedOpenGLView();
     eglView->setViewName("AhabDream");
-    eglView->setFrameSize(480, 320);
+    eglView->setFrameSize(1134, 750);
     return CCApplication::sharedApplication()->run();
 }
