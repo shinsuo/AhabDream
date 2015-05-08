@@ -35,4 +35,10 @@ enum{
     kDebug,
 };
 
+enum
+{
+    kTag_Start,
+    kTag_Fire,
+};
+
 #endif /* defined(__AhabDream__AppConfig__) */

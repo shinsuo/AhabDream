@@ -13,6 +13,7 @@
 #include <vector>
 #include <string>
 
+class BloodGroove;
 class Actor : public cocos2d::CCNode
 {
 public:
@@ -26,12 +27,25 @@ public:
     CREATE_FUNC(Actor);
     
     CC_SYNTHESIZE(std::string, m_strPng, StrPng);
+    CC_SYNTHESIZE(std::string, m_strWeapon, StrWeapon);
     
     virtual const cocos2d::CCSize& getContentSize() const;
     
-private:
+    
+    virtual void fire();
+    virtual void showUI();
+    
+    virtual void addBlood(int blood);
+    virtual void addPower(int power);
+    
+protected:
     
     cocos2d::CCSprite* m_pSp;
+    cocos2d::CCSprite* m_pWeapon;
+    
+    BloodGroove* m_pBlood;
+    BloodGroove* m_pPower;
+
 };
 
 //----------------------------------------------------------------
@@ -58,10 +72,14 @@ public:
     virtual bool init();
     
     void moveAimY(float y);
+    float moveXByY(float y);
     
     CC_SYNTHESIZE(cocos2d::CCSprite*, m_pAim1, Aim1);
     CC_SYNTHESIZE(cocos2d::CCSprite*, m_pAim2, Aim2);
     
     virtual void update(float dt);
+    
+private:
+    float m_fRotate;
 };
 #endif /* defined(__AhabDream__Actor__) */
